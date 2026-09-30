@@ -1,0 +1,2 @@
+# MyExpenses
+An expense manager
