@@ -1,7 +1,7 @@
 #################################################
 #Author : Hussler Clement
 #Date of creation : 30/09/2026
-#Last_update : 30/09/2026
+#Last_update : 01/10/2026
 
 #All copyright belongs to the original author
 ################################################
@@ -12,7 +12,7 @@ import csv
 import datetime
 
 #Variables
-datapath = '' # path to file for data location
+datapath = 'C:/Users/cleme/Documents/DEV/Projects/Myexpenses/Test.csv' # path to file for data location
 date = datetime.datetime.now() # date of the day
 
 Name = ''
@@ -22,11 +22,14 @@ Type = ''
 Additional_note = ''
 
 #Main
-'''
-def write_data(Name,Ammount,Date,Type,Additional_note,datapath):
-    with open(datapath,'w') as file :
+def write_data(Name,Amount,date,Type,Additional_note,datapath):
+    with open(datapath, 'w', newline = '') as file :
+        data_line = csv.writer(file)
         
+        data_line.writerow(['Expense'] + ['Amount'] + ['Type'] + ['Date_of_expense'] + ['Additional note'])
+        data_line.writerow([Name] + [str(Amount)] + [Type] + [str(date)] + [Additional_note])
 
+'''
 def read_data(Name,Ammount,Date,Type,Additional_note,datapath):
 '''
 
@@ -37,3 +40,5 @@ try :
     Additional_note = input('Any additional note regarding the expense ? ')
 except ValueError :
     print('Data type is not correct please enter the correct one')
+
+write_data(Name,Amount,date,Type,Additional_note,datapath)
