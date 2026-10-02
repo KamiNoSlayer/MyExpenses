@@ -12,7 +12,7 @@ import csv
 import datetime
 
 #Variables
-datapath = 'C:/Users/cleme/Documents/DEV/Projects/Myexpenses/Test.csv' # path to file for data location
+datapath = '' # path to file for data location
 date = datetime.datetime.now() # date of the day
 
 Name = ''
